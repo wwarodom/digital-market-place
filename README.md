@@ -1,15 +1,40 @@
-# Basic Sample Hardhat Project
+# Digital Market Place
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+NFT Digital Market Place based on Polygon network (Mumbai). This is the work from [Nader Dabit](https://dev.to/dabit3/building-scalable-full-stack-apps-on-ethereum-with-polygon-2cfb).
 
-Try running some of the following tasks:
+I modified hardhat.config.js from default mumbai-test network (https://rpc-mumbai.matic.today) to Alchemy service in order to access Polygon network. I also update JSON-RPC provider as follows:
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
 ```
+const url = `https://polygon-mumbai.g.alchemy.com/v2/${ALCHEMY.ALCHEMY_ID}`;
+const provider =  new ethers.providers.JsonRpcProvider(url);
+```
+
+Note: if you want to use the Infura service, you must enable Polygon L2 which required to put your creditcard for activating process.
+
+## Step: 
+### Install 
+    
+```
+git clone https://github.com/wwarodom/digital-market-place.git.git
+cd digital-market-place
+npm i
+```
+
+##### Wallet setup
+* Request MATIC token from Polygon Faucet: https://faucet.matic.network/.
+* Edit .secret: put your private key on deploy account
+* Edit alchemy.jon: put your secret id fro https://dashboard.alchemyapi.io/
+
+
+### Deploy and run
+``` 
+npx hardhat run scripts/deploy.js --network mumbai
+npm run dev
+```
+
+Then open http://localhost:3000/ and have fun with NFT digital market place.
+
+
+### References
+* https://www.youtube.com/watch?v=GKJBEEXUha0
+* https://dev.to/dabit3/building-scalable-full-stack-apps-on-ethereum-with-polygon-2cfb
