@@ -22,8 +22,9 @@ npm i
 
 ##### Wallet setup
 * Request MATIC token from Polygon Faucet: https://faucet.matic.network/.
-* Edit .secret: put your private key on deploy account
-* Edit alchemy.jon: put your secret id fro https://dashboard.alchemyapi.io/
+* Don't forget to add Polygon network to Metamask. (https://docs.matic.network/docs/develop/network-details/network)
+* Edit .secret: put your private key of your deploy account
+* Edit alchemy.jon: put your secret id from https://dashboard.alchemyapi.io/
 
 
 ### Deploy and run
